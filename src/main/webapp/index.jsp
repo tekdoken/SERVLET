@@ -18,6 +18,7 @@
     <input type="text" name="txtSearch" placeholder="Product Description: "/>
     <input type="text" name="txtSearch" placeholder="List Price: "/>
     <input type="text" name="txtSearch" placeholder="Discount Percent: "/>
+
     <button>Calculate Discount</button>
 </form>
 </body>
