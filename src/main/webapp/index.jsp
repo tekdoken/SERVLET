@@ -14,10 +14,10 @@
 </head>
 <body>
 <h2>Product Discount Calculator</h2>
-<form action="/translate" method="post">
-    <input type="text" name="txtSearch" placeholder="Product Description: "/>
-    <input type="text" name="txtSearch" placeholder="List Price: "/>
-    <input type="text" name="txtSearch" placeholder="Discount Percent: "/>
+<form action="/display-discount" method="post">
+    <input type="text" name="Description" placeholder="Product Description: "/>
+    <input type="text" name="Price" placeholder="List Price: "/>
+    <input type="text" name="Percent" placeholder="Discount Percent: "/>
 
     <button>Calculate Discount</button>
 </form>
