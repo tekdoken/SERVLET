@@ -9,17 +9,14 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
-    <title>Simple Dictionary</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h2>Product Discount Calculator</h2>
-<form action="/display-discount" method="post">
-    <input type="text" name="Description" placeholder="Product Description: "/>
-    <input type="text" name="Price" placeholder="List Price: "/>
-    <input type="text" name="Percent" placeholder="Discount Percent: "/>
-
-    <button>Calculate Discount</button>
+<h2>Vietnamese Dictionary</h2>
+<form action="dictionary.jsp" method="post">
+    <input type="text" name="search" placeholder="Enter your word: "/>
+    <input type = "submit" id = "submit" value = "Search"/>
 </form>
 </body>
 </html>
