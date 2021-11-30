@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/products")
@@ -84,12 +85,6 @@ public class ProductServlet extends HttpServlet {
         response.sendRedirect("/products");
     }
 
-    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        productService.delete(id);
-        response.sendRedirect("/products");
-    }
-
     private void showEditProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("product/edit.jsp");
         int id = Integer.parseInt(request.getParameter("id"));
@@ -97,6 +92,12 @@ public class ProductServlet extends HttpServlet {
         request.setAttribute("productEdit", product);
         requestDispatcher.forward(request, response);
     }
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        productService.delete(id);
+        response.sendRedirect("/products");
+    }
+
 
 
     private void saveProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {

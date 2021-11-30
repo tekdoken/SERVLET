@@ -13,10 +13,15 @@
 </head>
 <body>
 <h1>List</h1>
+
 <a href="/products?action=create">create</a>
 <a href="/products?action=find">find</a>
-<c:forEach items='${requestScope["list"]}' var="pr">
-    <h3>${pr.name},${pr.id},${pr.price},<a href="/products?action=edit&id=${pr.id}">edit</a><a href="/products?action=delete&id=${pr.id}">delete</a></h3>
+<c:forEach items='${requestScope["list"]}' var="student">
+    <h3>${student.name},${student.id},${student.price},<a href="/products?action=edit&id=${student.id}">edit</a>
+        <a href="/products?action=delete&id=${student.id}" onclick="if (confirm('Delete selected item?')){return true;}else{event.stopPropagation(); event.preventDefault();};" title="Link Title">
+            delete
+        </a>
+    </h3>
 </c:forEach>
 </body>
 </html>

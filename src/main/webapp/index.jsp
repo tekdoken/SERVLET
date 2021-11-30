@@ -12,7 +12,6 @@
     <title>Product</title>
 </head>
 <body>
-<a href="/products">show product</a>
-
+<a href="StudentServlet">show list student</a>
 </body>
 </html>

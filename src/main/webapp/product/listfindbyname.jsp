@@ -16,8 +16,8 @@
 <a href="/products">show product</a>
 <a href="/products?action=create">create</a>
 <a href="/products?action=find">find</a>
-<c:forEach items='${requestScope["listfind"]}' var="pr">
-    <h3>${pr.name},${pr.id},${pr.price},<a href="/products?action=edit&id=${pr.id}">edit</a><a href="/products?action=delete&id=${pr.id}">delete</a></h3>
+<c:forEach items='${requestScope["listfind"]}' var="student">
+    <h3>${student.name},${student.id},${student.price},<a href="/products?action=edit&id=${student.id}">edit</a><a href="/products?action=delete&id=${student.id}">delete</a></h3>
 </c:forEach>
 </body>
 </html>
