@@ -46,10 +46,6 @@ public class ProductServiceImpl implements ProductService {
         return null;
     }
 
-    @Override
-    public void findByNameRE(String name) {
-
-    }
 
     @Override
     public List<Product> findByName(String name) {

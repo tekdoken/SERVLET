@@ -15,6 +15,6 @@ public interface ProductService {
     void update(int id, Product product);
 
     void delete(int id);
-    void findByNameRE(String name);
+
     List<Product> findByName(String name);
 }

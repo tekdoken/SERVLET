@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
+<a href="/products">Back to customer list</a>
+
 <form action="/products?action=edit" method="post">
     <input type="text" name="name" value="${productEdit.name}">
     <input type="number" name="id" value="${productEdit.id}">

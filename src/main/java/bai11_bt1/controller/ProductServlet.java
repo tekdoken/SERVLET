@@ -71,17 +71,16 @@ public class ProductServlet extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
     private void showFindProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("product/findbyname.jsp");
         requestDispatcher.forward(request, response);
     }
 
-    private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
         Double price = Double.parseDouble(request.getParameter("price"));
         String name = request.getParameter("name");
         productService.update(id, new Product(name, id, price));
+        showEditProduct(request,response);
         response.sendRedirect("/products");
     }
 
