@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "StudentServlet", value = "/StudentServlet")
+@WebServlet(name = "StudentServlet", value = "/Students")
 public class StudentServlet extends HttpServlet {
     StudentService studentService=new ServiceStudentImpl();
     @Override
@@ -51,7 +51,7 @@ public class StudentServlet extends HttpServlet {
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         studentService.delete(id);
-        response.sendRedirect("/StudentServlet");
+        response.sendRedirect("/Students");
     }
     private void showListStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("student/list.jsp");
@@ -73,6 +73,6 @@ public class StudentServlet extends HttpServlet {
         double scoreChemistry = Double.parseDouble(request.getParameter("che"));
         String name = request.getParameter("name");
         studentService.update(id, new Student(name, id, scoreMath,scorePhysics,scoreChemistry));
-        response.sendRedirect("/StudentServlet");
+        response.sendRedirect("/Students");
     }
 }

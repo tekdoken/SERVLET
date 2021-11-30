@@ -41,8 +41,8 @@
             </td>
             <td>${student.scoreChemistry}</td>
             <td><a
-                    href="/StudentServlet?action=edit&id=${student.id}"> edit </a></td>
-            <td><a href="/StudentServlet?action=delete&id=${student.id}"
+                    href="/Students?action=edit&id=${student.id}"> edit </a></td>
+            <td><a href="/Students?action=delete&id=${student.id}"
                    onclick="if (confirm('Delete selected item?')){return true;}else{event.stopPropagation(); event.preventDefault();};"
                    title="Link Title">
                 delete

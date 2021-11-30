@@ -11,9 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-<a href="StudentServlet">Back to customer list</a>
+<a href="Students">Back to customer list</a>
 
-<form action="StudentServlet?action=edit" method="post">
+<form action="Students?action=edit" method="post">
     name: <input type="text" name="name" value="${student.name}">
     <input type="hidden" name="id" value="${student.id}">
     score Math:<input type="number" name="math" value="${student.scoreMath}">
