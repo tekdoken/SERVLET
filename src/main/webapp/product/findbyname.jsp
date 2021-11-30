@@ -2,9 +2,10 @@
   Created by IntelliJ IDEA.
   User: z
   Date: 11/30/2021
-  Time: 1:07 AM
+  Time: 8:23 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,11 +13,10 @@
 </head>
 <body>
 <a href="/products">show product</a>
-<form action="/products?action=create" method="post">
-   name: <input type="text" name="name">
-    id:<input type="number" name="id">
-    price:<input type="number" name="price">
-    <button>create</button>
+<h1>List find</h1>
+<form method="post">
+    <input type="text" name="namefind" >
+    <button>find</button>
 </form>
 </body>
 </html>

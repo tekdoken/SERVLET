@@ -31,6 +31,9 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 deleteProduct(request, response);
                 break;
+            case "find":
+                showFindProduct(request, response);
+                break;
             default:
                 showListProduct(request, response);
 
@@ -47,34 +50,52 @@ public class ProductServlet extends HttpServlet {
             case "create":
                 saveProduct(request, response);
                 break;
-                case "edit":
-               editProduct(request, response);
+            case "edit":
+                editProduct(request, response);
                 break;
-                case "delete":
-               deleteProduct(request, response);
+            case "delete":
+                deleteProduct(request, response);
+                break;
+            case "find":
+                findProduct(request, response);
                 break;
             default:
 
         }
     }
+    private void findProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("namefind");
+        List<Product> productList = productService.findByName(name);
+        request.setAttribute("listfind", productList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("product/listfindbyname.jsp");
+        requestDispatcher.forward(request, response);
+    }
+    private void showFindProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    private  void editProduct(HttpServletRequest request,HttpServletResponse response) throws IOException {
+
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("product/findbyname.jsp");
+        requestDispatcher.forward(request, response);
+    }
+
+    private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Double price = Double.parseDouble(request.getParameter("price"));
         String name = request.getParameter("name");
         productService.update(id, new Product(name, id, price));
         response.sendRedirect("/products");
     }
-    private  void deleteProduct(HttpServletRequest request,HttpServletResponse response) throws IOException {
-        int id= Integer.parseInt(request.getParameter("id"));
+
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
         productService.delete(id);
         response.sendRedirect("/products");
     }
+
     private void showEditProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("product/edit.jsp");
-        int id= Integer.parseInt(request.getParameter("id"));
-        Product product=productService.findById(id);
-        request.setAttribute("productEdit",product);
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = productService.findById(id);
+        request.setAttribute("productEdit", product);
         requestDispatcher.forward(request, response);
     }
 
@@ -86,6 +107,7 @@ public class ProductServlet extends HttpServlet {
         productService.save(new Product(name, id, price));
         response.sendRedirect("/products");
     }
+
     private void showSaveProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("product/create.jsp");
         requestDispatcher.forward(request, response);

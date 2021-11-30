@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
     private List<Product> productList;
+    private List<Product> productListFind = new ArrayList<>();
 
     public ProductServiceImpl() {
         productList = new ArrayList<>();
@@ -43,6 +44,23 @@ public class ProductServiceImpl implements ProductService {
                 return p;
         }
         return null;
+    }
+
+    @Override
+    public void findByNameRE(String name) {
+
+    }
+
+    @Override
+    public List<Product> findByName(String name) {
+
+        for (Product p : productList
+        ) {
+            if (p.getName().contains(name)) {
+                productListFind.add(p);
+            }
+        }
+        return productListFind;
     }
 
     @Override
