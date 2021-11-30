@@ -9,14 +9,10 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
-    <title>Currency Converter</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Product</title>
 </head>
 <body>
-<h2>Vietnamese Dictionary</h2>
-<form action="dictionary.jsp" method="post">
-    <input type="text" name="search" placeholder="Enter your word: "/>
-    <input type = "submit" id = "submit" value = "Search"/>
-</form>
+<a href="/products">show product</a>
+
 </body>
 </html>
