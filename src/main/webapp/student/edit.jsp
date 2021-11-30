@@ -13,9 +13,9 @@
 <body>
 <a href="Students">Back to customer list</a>
 
-<form action="Students?action=edit" method="post">
+<form action="Students?action=edit&id=${student.id}" method="post">
     name: <input type="text" name="name" value="${student.name}">
-    <input type="hidden" name="id" value="${student.id}">
+<%--    <input type="hidden" name="id" value="${student.id}">--%>
     score Math:<input type="number" name="math" value="${student.scoreMath}">
     score Physics: <input type="number" name="phy" value="${student.scorePhysics}">
     score Chemistry: <input type="number" name="che" value="${student.scoreChemistry}">

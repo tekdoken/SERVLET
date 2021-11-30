@@ -36,7 +36,6 @@
             <td>${student.name}</td>
             <td>${student.id}</td>
             <td>${student.scoreMath}</td>
-
             <td>${student.scorePhysics}
             </td>
             <td>${student.scoreChemistry}</td>
