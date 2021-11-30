@@ -14,12 +14,11 @@
 <a href="StudentServlet">Back to customer list</a>
 
 <form action="StudentServlet?action=edit" method="post">
-    <input type="text" name="name" value="${student.name}">
-    <input type="number" name="id" value="${student.id}">
-    <input type="number" name="newid" value="${student.id}">
-    <input type="number" name="math" value="${student.scoreMath}">
-    <input type="number" name="phy" value="${student.scorePhysics}">
-    <input type="number" name="che" value="${student.scoreChemistry}">
+    name: <input type="text" name="name" value="${student.name}">
+    <input type="hidden" name="id" value="${student.id}">
+    score Math:<input type="number" name="math" value="${student.scoreMath}">
+    score Physics: <input type="number" name="phy" value="${student.scorePhysics}">
+    score Chemistry: <input type="number" name="che" value="${student.scoreChemistry}">
     <button>edit</button>
 </form>
 </body>

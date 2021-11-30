@@ -10,7 +10,13 @@
 <html>
 <head>
     <title>Title</title>
-    <style></style>
+    <style>
+        table, th, td{
+            border:1px solid #47d21d;
+        }
+        table{
+            border-collapse:collapse;
+        }</style>
 </head>
 <body>
 <h2>List Student</h2>

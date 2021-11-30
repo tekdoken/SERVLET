@@ -68,12 +68,11 @@ public class StudentServlet extends HttpServlet {
     }
     private void editStudent(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
-        int newid = Integer.parseInt(request.getParameter("newid"));
-        Double scoreMath = Double.parseDouble(request.getParameter("math"));
-        Double scorePhysics = Double.parseDouble(request.getParameter("phy"));
-        Double scoreChemistry = Double.parseDouble(request.getParameter("che"));
+        double scoreMath = Double.parseDouble(request.getParameter("math"));
+        double scorePhysics = Double.parseDouble(request.getParameter("phy"));
+        double scoreChemistry = Double.parseDouble(request.getParameter("che"));
         String name = request.getParameter("name");
-        studentService.update(id, new Student(name, newid, scoreMath,scorePhysics,scoreChemistry));
+        studentService.update(id, new Student(name, id, scoreMath,scorePhysics,scoreChemistry));
         response.sendRedirect("/StudentServlet");
     }
 }
